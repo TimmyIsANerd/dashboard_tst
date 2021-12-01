@@ -298,7 +298,7 @@
             <section>
 
 
-                <div >
+                <div id="#divloteria">
                     <div class="card full-width">
                         <div class="card-body">
                             
@@ -359,6 +359,15 @@
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'UA-65076627-9');
+    </script>
+
+    <script>
+        window.document.onload = function(e){ 
+      var height = $("#divloteria").find("iframe").css("width");
+  height = height.replace("px", "");
+  height *= 2;
+  $("#divloteria").find("iframe").css("height", height + "px");
+}
     </script>
 
 </body>
