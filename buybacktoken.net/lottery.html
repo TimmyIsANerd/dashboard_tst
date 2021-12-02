@@ -149,6 +149,11 @@
                                 class="flaticon-003-diamond icon"></i><span>Lottery</span></a>
                     </li>
 
+                    <li class="">
+                        <a href="/buybacktoken.net/games.html" title=""><i
+                                class="flaticon-152-followers icon"></i><span>Play for Fun</span></a>
+                    </li>
+
                     <li class="submenu">
                         <a href="#token-vault-menu" data-toggle="collapse" aria-expanded="false"
                             class="dropdown-toggle collapsed">
@@ -298,7 +303,7 @@
             <section>
 
 
-                <div id="#divloteria">
+                <div id="divloteria">
                     <div class="card full-width">
                         <div class="card-body">
                             
@@ -362,12 +367,15 @@
     </script>
 
     <script>
-        window.document.onload = function(e){ 
-      var height = $("divloteria").find("iframe").css("width");
-  height = height.replace("px", "");
-  height *= 2;
-  $("divloteria").find("iframe").css("height", height + "px");
-}
+       window.onload = function(e){ 
+        if(window.innerWidth < window.innerHeight)
+            {
+                var height = $("#divloteria").find("iframe").css("width");
+                    height = height.replace("px", "");
+                    height *= 2;
+                    $("#divloteria").find("iframe").css("height", height + "px");
+            }
+        }
     </script>
 
 </body>
