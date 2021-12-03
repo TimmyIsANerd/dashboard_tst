@@ -261,7 +261,7 @@
 
                 <main class="container-fluid">                   
                     
-                   <div class="row-flex justify-content-between">
+                   <div class="row-flex justify-content-between" id="diviframe">
                     <div class="row">
                         
                         <h4 class="card-title">
@@ -691,6 +691,18 @@
       gtag('js', new Date());
       gtag('config', 'UA-65076627-9');
     </script>
+
+<script>
+    window.onload = function(e){ 
+     if(window.innerWidth < window.innerHeight)
+         {
+             var height = $("#diviframe").find("iframe").css("width");
+                 height = height.replace("px", "");
+                 height *= 2;
+                 $("#diviframe").find("iframe").css("height", height + "px");
+         }
+     }
+ </script>
     
 </body>
 
