@@ -5,7 +5,7 @@ appId =  "OqhZPshkcGYtVulxkxcB7aomqgDqnEjlAbbkJZaN";
 Moralis.start({ serverUrl, appId});
 let user;
 
-let homepage = "http://127.0.0.1:5500/"
+let homepage = "https://testingbbt.netlify.app/"
 
 async function login(){
    

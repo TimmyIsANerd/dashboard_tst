@@ -4,7 +4,7 @@ console.log('hello world');
 Moralis.initialize("OqhZPshkcGYtVulxkxcB7aomqgDqnEjlAbbkJZaN");
 Moralis.serverURL = "https://pe6tgnkrykjf.usemoralis.com:2053/server";
 
-let homepage = "http://127.0.0.1:5500/"
+let homepage = "https://testingbbt.netlify.app/"
 
 //HELPER FUNCTIONS
 login = async () => {
