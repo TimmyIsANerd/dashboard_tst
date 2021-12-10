@@ -57,6 +57,10 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style4bf4.css?ver=1.0.3" />
     <script src="../cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+    <!-- Modal upload -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Modal upload-->
 
     <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
     <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
@@ -128,8 +132,7 @@
                     </li>
 
                     <li class="">
-                        <a href="charts.html" title=""><i
-                                class="flaticon-164-up-arrow icon"></i><span>Charts</span></a>
+                        <a href="charts.html" title=""><i class="flaticon-164-up-arrow icon"></i><span>Charts</span></a>
                     </li>
 
                     <li class="">
@@ -302,60 +305,68 @@
             </div>
             <div class="row">
                 <div class="col-sm-12 col-md-12 text-center">
-                    <div class="card-body" >
-                        
-                        
+                    <div class="card-body">
+
+
 
                         <div id="transferERC20" class="col-md-12 ">
 
                             <div class="m-3 text-center h6">
 
                             </div>
-                            
-                                
-                                    
+
+
+
                             <div class="row d-flex justify-content-center align-items-stretch">
                                 <div class="card " style="border: 2px solid #70dbfc;">
                                     <div class="card-body just"> <br>
-                                        <button id="btn-login" class="w-100 btn btn-lg btn-primary" style="border-radius: 25px;" type="submit">
+                                        <button id="btn-login" class="w-100 btn btn-lg btn-primary"
+                                            style="border-radius: 25px;" type="submit">
                                             Login with Metamask
                                         </button><br><br>
 
-                                <div id="TransferERC20Section" class="container col-md-14 justify-content-center">
-                                    <div class="form-group col-md-12 mb-3">
-                                        <label for="ERC20TransferAmount">How many tokens would you like to
-                                            transfer?</label>
-                                        <input type="number" step="0.01" class="form-control" id="ERC20TransferAmount"
-                                            placeholder="Ex: 1">
-                                    </div>
-                                    <div class="form-group col-md-12 mb-3">
-                                        <label for="ERC20TransferAddress">Which address do you want to send the tokens
-                                            to? </label>
-                                        <input type="text" class="form-control" id="ERC20TransferAddress"
-                                            placeholder="Receiver address">
-                                    </div>
+                                        <div id="TransferERC20Section"
+                                            class="container col-md-14 justify-content-center">
+                                            <div class="form-group col-md-12 mb-3">
+                                                <label for="ERC20TransferAmount">How many tokens would you like to
+                                                    transfer?</label>
+                                                <input type="number" step="0.01" class="form-control"
+                                                    id="ERC20TransferAmount" placeholder="Ex: 1">
+                                            </div>
+                                            <div class="form-group col-md-12 mb-3">
+                                                <label for="ERC20TransferAddress">Which address do you want to send the
+                                                    tokens
+                                                    to? </label>
+                                                <input type="text" class="form-control" id="ERC20TransferAddress"
+                                                    placeholder="Receiver address">
+                                            </div>
 
-                                    <div class="form-group col-md-12 mb-3">
-                                        <label for="ERC20TransferDecimals">How many decimals does the token you want to
-                                            send have? </label>
-                                        <input type="number" step="1" class="form-control" id="ERC20TransferDecimals"
-                                            placeholder="Token decimals">
-                                    </div>
-                                    <div class="form-group col-md-12 mb-3 ">
-                                        <label for="ERC20TransferContract">What's the token contract address? </label>
-                                        <input type="text" class="form-control" id="ERC20TransferContract"
-                                            placeholder="Token contract address?">
-                                    </div>
-                                    <br><br>
-                                    <button  id="ERC20TransferButton" style="border-radius: 25px;"  type="submit"
-                                        class="btn btn-primary col-md-12  justify-content-between" ><h4>SEND</h4></button>
-                                </div><br><br>
+                                            <div class="form-group col-md-12 mb-3">
+                                                <label for="ERC20TransferDecimals">How many decimals does the token you
+                                                    want to
+                                                    send have? </label>
+                                                <input type="number" step="1" class="form-control"
+                                                    id="ERC20TransferDecimals" placeholder="Token decimals">
+                                            </div>
+                                            <div class="form-group col-md-12 mb-3 ">
+                                                <label for="ERC20TransferContract">What's the token contract address?
+                                                </label>
+                                                <input type="text" class="form-control" id="ERC20TransferContract"
+                                                    placeholder="Token contract address?">
+                                            </div>
+                                            <br><br>
+                                            <button id="ERC20TransferButton" style="border-radius: 25px;" type="submit"
+                                                class="btn btn-primary col-md-12  justify-content-between">
+                                                <h4>SEND</h4>
+                                            </button>
+                                        </div><br><br>
                                     </div>
                                 </div>
 
                             </div>
 
-                            
+
+
                             <br>
 
 
@@ -372,8 +383,12 @@
                                                 <tbody id="transferERC20Balances">
                                                 </tbody>
                                             </table>
-                                            <button id="transferERC20GetBalances" style="border-radius: 25px;" class="w-50 btn btn-primary" ><h5>Get
-                                                balances</h5></button>
+                                            <button id="transferERC20GetBalances" style="border-radius: 25px;"
+                                                class="w-50 btn btn-primary" data-bs-toggle="modal"
+                                                data-bs-target="#getbalance">
+                                                <h5>Get
+                                                    balances</h5>
+                                            </button>
 
                                         </div>
                                     </div>
@@ -385,9 +400,11 @@
                         <br>
                         <br>
                         <br>
-                        <button id="btn-refresh" class="w-100 btn btn-lg btn-primary" style="border-radius: 25px;" type="submit">Refresh
+                        <button id="btn-refresh" class="w-100 btn btn-lg btn-primary" style="border-radius: 25px;"
+                            type="submit">Refresh
                             Page</button><br><br>
-                        <button id="btn-logout" class="w-100 btn btn-lg btn-primary" style="border-radius: 25px;" type="submit">Logout</button>
+                        <button id="btn-logout" class="w-100 btn btn-lg btn-primary" style="border-radius: 25px;"
+                            type="submit">Logout</button>
                         <br>
                         <br>
 
@@ -398,7 +415,39 @@
 
 
 
+                        <!-- Modal -->
 
+                        <div class="modal fade" id="getbalance" data-bs-backdrop="static" data-bs-keyboard="false"
+                            tabindex="-1" aria-labelledby="Get Started!" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header  justify-content-center">
+
+                                        <div class="row d-flex justify-content-center">
+                                            <img  id="mm-logo" src=..\buybacktoken.net\assets\images\warning.png />
+                                                                                     
+                                           
+                                        </div>
+                                       
+
+                                    </div>
+                                    <div class="modal-body">
+                                        <p  style="color:black">Anyone can create a BEP20 token in the BSC with any name, including creating fake versions of existing tokens and tokens claiming to represent projects that don't have a token.
+                                            Always confirm that the contract address matches the actual token you wish to transfer. Do not touch tokens that you have never purchased or are not aware of that might be a phishing token.</p>
+                                        <p style="color:red">Disclaimer: Make sure that you know the token you are moving.</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="w-100 btn btn-lg btn-primary"
+                                            data-bs-dismiss="modal">
+                                            Close
+                                        </button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Modal -->
 
 
 
@@ -422,7 +471,7 @@
                 gtag('js', new Date());
                 gtag('config', 'UA-65076627-9');
             </script>
-           
+
 
 
 

@@ -4,15 +4,7 @@ console.log('hello world');
 Moralis.initialize("OqhZPshkcGYtVulxkxcB7aomqgDqnEjlAbbkJZaN");
 Moralis.serverURL = "https://pe6tgnkrykjf.usemoralis.com:2053/server";
 
-let homepage = "http://127.0.0.1:5500/index.html";
-let dashboard = "http://127.0.0.1:5500/dashboard.html";
-
-// REDIRECT USER BASED ON STATUS
-if (Moralis.User.current() == null && window.location.href != homepage) {
-    document.querySelector('body').style.display = 'none';
-    window.location.href = "index.html";
-}
-
+let homepage = "https://testingbbt.netlify.app/"
 
 //HELPER FUNCTIONS
 login = async () => {
@@ -24,13 +16,9 @@ login = async () => {
 
 
 
-if (Moralis.User.current() != null && window.location.href == homepage) {
-    window.location.href = "dashboard.html";
-}
-
 logout = async () => {
     await Moralis.User.logOut();
-    window.location.href = "buybacktoken.net/index.html";
+    window.location.href = homepage;
 }
 
 renderContent = (element) => {
@@ -315,11 +303,11 @@ getTransferERC20Balances = async () => {
     balancesContent.innerHTML ='';
     
     if(ethTokens.length > 0){
-        // Enter your ETH mainnet code here - I only worked with rinkeby (see below)
+        // Enter your ETH mainnet code here 
     }
     if(ropstenTokens.length > 0){
-        // Enter your ropsten testnet code here - I only worked with rinkeby (see below)
-    }
+        // Enter your ropsten testnet code here 
+        
     if(rinkebyTokens.length > 0){
         let tokenBalanceContent = '';
 

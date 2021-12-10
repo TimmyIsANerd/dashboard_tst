@@ -5,6 +5,7 @@ appId =  "OqhZPshkcGYtVulxkxcB7aomqgDqnEjlAbbkJZaN";
 Moralis.start({ serverUrl, appId});
 let user;
 
+let homepage = "https://testingbbt.netlify.app/"
 
 async function login(){
    
@@ -36,7 +37,7 @@ logout = async () => {
     console.log('logout');
     await Moralis.User.logOut();
     alert('Logged Wallet Disconnecting \n' + user.get("ethAddress"));
-    window.location.href = "index.html";
+    window.location.href = homepage;
 }
 
 
